@@ -1,0 +1,71 @@
+namespace MauiApp2
+{
+    public partial class MainPage : ContentPage
+    {
+        int count = 0;
+
+        public MainPage()
+        {
+            InitializeComponent();
+        }
+        private void wypisz_Clicked(object sender, EventArgs e)
+        {
+            string imiex = imie.Text;
+            string plec ="";
+            string dieta ="";
+            int cena = 0;
+
+            if(m.IsChecked == true)
+            {
+                plec = "Mężczyzna";
+            }
+            else if (k.IsChecked == true)
+            {
+                plec = "Kobieta";
+            }
+
+            if (Wege.IsChecked == true)
+            {
+                dieta = "Puta Mierda";
+                cena = 40;
+            }
+            else if (Vegeta.IsChecked == true)
+            {
+                dieta = "The Saiyan Prince";
+                cena = 45;
+            }
+            else if (Free.IsChecked == true)
+            {
+                dieta = "Condition: Sane";
+                cena = 30;
+            }
+
+            label.Text = imiex + ":\n Płeć - " + plec + "\n  Dieta - " + dieta+"\n Cena - "+cena;
+        }
+
+        private void Oblicz_Clicked(object sender, EventArgs e)
+        {
+            string promienx = promien.Text;
+            double wynikx = 0;
+
+            if(float.TryParse(promienx, out float r))
+            {
+                if(pole.IsChecked == true)
+                {
+                    wynikx = Math.PI * (r * r);
+                    wynik.Text = "\u03C0" + r + "^2 = " + wynikx;
+                }
+                else if(obwod.IsChecked == true)
+                {
+                    wynikx = 2 * Math.PI * r;
+                    wynik.Text = "2\u03C0" + r +" = " + wynikx;
+                }
+                else
+                {
+                    wynik.Text = "Podaj poprawne dane.";
+                }
+            }
+
+        }
+    }
+}
