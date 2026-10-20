@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2.MainPage">
+
+    <VerticalStackLayout HorizontalOptions="Center">
+        <HorizontalStackLayout >
+            <Label Text="Imie: " VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Entry VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="200" x:Name="imie"/>
+        </HorizontalStackLayout>
+        <Label Text="Płeć: " />
+        <RadioButton x:Name="m" GroupName="sex" Content="Menszczyzna"/>
+        <RadioButton x:Name="k" GroupName="sex" Content="Samica~"/>
+
+        <Label Text="Dieta: " />
+        <RadioButton x:Name="Wege" Content="Wege" GroupName="diet"/>
+        <RadioButton x:Name="Vegeta" Content="Vegeta" GroupName="diet"/>
+        <RadioButton x:Name="Free" Content="Free" GroupName="diet"/>
+
+        <Button Text="Wypisz" x:Name="wypisz" Clicked="wypisz_Clicked"/>
+
+        <Label Text=" " x:Name="label"/>
+        <Label Text=" "/>
+        <HorizontalStackLayout>
+            <Label Text="Promień: " VerticalOptions="Center"/>
+            <Entry VerticalOptions="Center" x:Name="promien"/>
+        </HorizontalStackLayout>
+        <RadioButton x:Name="pole" Content="Pole" GroupName="kolo"/>
+        <RadioButton x:Name="obwod" Content="Obwód" GroupName="kolo"/>
+
+        <Button Text="Oblicz" x:Name="Oblicz" Clicked="Oblicz_Clicked"/>
+        <Label x:Name="wynik"/>
+    </VerticalStackLayout>
+
+</ContentPage>
